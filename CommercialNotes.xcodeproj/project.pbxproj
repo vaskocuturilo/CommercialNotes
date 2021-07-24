@@ -16,6 +16,7 @@
 		72FE4AD626AC1E5D008D34A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FE4AD426AC1E5D008D34A1 /* LaunchScreen.storyboard */; };
 		72FE4AE126AC1E5D008D34A1 /* CommercialNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE4AE026AC1E5D008D34A1 /* CommercialNotesTests.swift */; };
 		72FE4AEC26AC1E5D008D34A1 /* CommercialNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE4AEB26AC1E5D008D34A1 /* CommercialNotesUITests.swift */; };
+		72FE4B1126AC4A03008D34A1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE4B1026AC4A03008D34A1 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		72FE4AE726AC1E5D008D34A1 /* CommercialNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommercialNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FE4AEB26AC1E5D008D34A1 /* CommercialNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommercialNotesUITests.swift; sourceTree = "<group>"; };
 		72FE4AED26AC1E5D008D34A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72FE4B1026AC4A03008D34A1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				72FE4AD426AC1E5D008D34A1 /* LaunchScreen.storyboard */,
 				72FE4AD726AC1E5D008D34A1 /* Info.plist */,
 				72FE4ACF26AC1E5C008D34A1 /* CommercialNotes.xcdatamodeld */,
+				72FE4B1026AC4A03008D34A1 /* TableViewController.swift */,
 			);
 			path = CommercialNotes;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				72FE4ACB26AC1E5C008D34A1 /* ViewController.swift in Sources */,
 				72FE4AD126AC1E5C008D34A1 /* CommercialNotes.xcdatamodeld in Sources */,
 				72FE4AC726AC1E5C008D34A1 /* AppDelegate.swift in Sources */,
+				72FE4B1126AC4A03008D34A1 /* TableViewController.swift in Sources */,
 				72FE4AC926AC1E5C008D34A1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
