@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="QQT-aF-c2J">
             <objects>
-                <viewController id="P5k-DP-qtk" customClass="ViewController" customModule="CommercialNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P5k-DP-qtk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jF0-NR-3Vb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,9 +25,6 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" systemColor="secondaryLabelColor"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="ikr-BA-ekm" kind="show" id="vWz-pb-vyr"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omg-PL-UJV">
                                         <rect key="frame" x="0.0" y="98" width="314" height="48"/>
@@ -49,6 +46,9 @@
                                         <state key="normal" title="Anonymous">
                                             <color key="titleColor" systemColor="systemTealColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="ikr-BA-ekm" kind="show" id="tG5-BT-GUP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -83,49 +83,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4U-1J-yWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="77"/>
+            <point key="canvasLocation" x="-912" y="77"/>
         </scene>
-        <!--View Controller-->
+        <!--Commercial Note Create Change View Controller-->
         <scene sceneID="4k6-yz-hOM">
             <objects>
-                <viewController id="on8-hh-YT1" sceneMemberID="viewController">
+                <viewController id="on8-hh-YT1" customClass="CommercialNoteCreateChangeViewController" customModule="CommercialNotes" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vT-Wu-dd3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZj-ad-PhU">
-                                <rect key="frame" x="16" y="60" width="182" height="17"/>
+                                <rect key="frame" x="16" y="16" width="182" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSd-92-e6b">
-                                <rect key="frame" x="16" y="127" width="382" height="17"/>
+                                <rect key="frame" x="16" y="83" width="382" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Note 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHy-vI-Dwn">
-                                <rect key="frame" x="16" y="85" width="382" height="34"/>
+                                <rect key="frame" x="16" y="41" width="382" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="noteTitleText:" destination="7Bo-9C-7Wh" eventType="editingDidEnd" id="4GE-5f-bbq"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yf6-sf-NPb">
-                                <rect key="frame" x="16" y="152" width="382" height="514"/>
+                                <rect key="frame" x="16" y="108" width="382" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL5-et-kpQ">
-                                <rect key="frame" x="150" y="60" width="248" height="17"/>
+                                <rect key="frame" x="150" y="16" width="248" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC8-eF-dyZ">
-                                <rect key="frame" x="16" y="674" width="382" height="42"/>
+                                <rect key="frame" x="16" y="654" width="382" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="✓ OK"/>
+                                <connections>
+                                    <action selector="tapAddButton:" destination="on8-hh-YT1" eventType="touchUpInside" id="gcV-o5-tmM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oas-ch-TGE"/>
@@ -153,10 +159,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZEq-VG-ajO"/>
+                    <connections>
+                        <outlet property="noteDateLabel" destination="aL5-et-kpQ" id="fkz-eE-2mi"/>
+                        <outlet property="noteDoneButton" destination="sC8-eF-dyZ" id="rQI-S2-1oZ"/>
+                        <outlet property="noteTextView" destination="Yf6-sf-NPb" id="yD2-qb-TLY"/>
+                        <outlet property="noteTitleTextField" destination="xHy-vI-Dwn" id="eW9-bf-Jtv"/>
+                        <segue destination="ikr-BA-ekm" kind="show" identifier="backToMasterView" id="Uk9-kD-NKI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL1-s0-Jyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Bo-9C-7Wh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="245"/>
+            <point key="canvasLocation" x="1910" y="263"/>
         </scene>
         <!--Detail-->
         <scene sceneID="qxS-eu-S63">
@@ -285,13 +299,13 @@
         <!--Master-->
         <scene sceneID="OfQ-eG-8Bd">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="ikr-BA-ekm" customClass="TableViewController" customModule="CommercialNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="ikr-BA-ekm" customClass="MasterTableViewController" customModule="CommercialNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v37-kZ-ExV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="104" id="oEV-m2-5Sn" customClass="ReallySimpleNoteUITableViewCell" customModule="CommercialNotes" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="104" id="oEV-m2-5Sn" customClass="CommercialNoteUITableViewCell" customModule="CommercialNotes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oEV-m2-5Sn" id="dcy-VR-s20">
@@ -331,9 +345,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="noteDateLabel" destination="DDC-mb-k6w" id="h5Y-Y3-fEi"/>
-                                    <outlet property="noteTextLabel" destination="nWq-p2-26h" id="bnd-Ph-eAv"/>
-                                    <outlet property="noteTitleLabel" destination="uV0-Ap-R9y" id="qXh-ZY-BfP"/>
+                                    <outlet property="noteDateLabel" destination="DDC-mb-k6w" id="QxW-b3-moA"/>
+                                    <outlet property="noteTextLabel" destination="nWq-p2-26h" id="WpQ-B8-8gq"/>
+                                    <outlet property="noteTitleLabel" destination="uV0-Ap-R9y" id="b5g-og-jD7"/>
                                     <segue destination="on8-hh-YT1" kind="show" identifier="showCreateNoteSegue" id="POa-Wf-uZY"/>
                                 </connections>
                             </tableViewCell>
@@ -347,6 +361,10 @@
             <point key="canvasLocation" x="843" y="77"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="POa-Wf-uZY"/>
+        <segue reference="Uk9-kD-NKI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
