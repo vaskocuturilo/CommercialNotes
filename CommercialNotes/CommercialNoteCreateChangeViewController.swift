@@ -15,13 +15,25 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
     
     private let noteCreationTimeStamp : Int64 = Date().toSeconds()
     
+    private(set) var changingReallySimpleNote : CommercialNotesModelData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         noteTextView.delegate = self
         
-        // Do any additional setup after loading the view.
-        noteDateLabel.text = CommercialNotesDateHelper.convertDate(date: Date.init(seconds: noteCreationTimeStamp))
+        // check if we are in create mode or in change mode
+        if let changingReallySimpleNote = self.changingReallySimpleNote {
+            // in change mode: initialize for fields with data coming from note to be changed
+            noteDateLabel.text = CommercialNotesDateHelper.convertDate(date: Date.init(seconds: noteCreationTimeStamp))
+            noteTextView.text = changingReallySimpleNote.noteText
+            noteTitleTextField.text = changingReallySimpleNote.noteTitle
+            // enable done button by default
+            noteDoneButton.isEnabled = true
+        } else {
+            // in create mode: set initial time stamp label
+            noteDateLabel.text = CommercialNotesDateHelper.convertDate(date: Date.init(seconds: noteCreationTimeStamp))
+        }
         
         // initialize text view UI - border width, radius and color
         noteTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
@@ -35,7 +47,18 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
     }
     
     @IBAction func tapAddButton(_ sender: Any) {
-        addItem()
+        // distinguish change mode and create mode
+        if self.changingReallySimpleNote != nil {
+            // change mode - change the item
+            changeItem()
+        } else {
+            // create mode - create the item
+            addItem()
+        }
+    }
+    
+    func setChangingReallySimpleNote(changingReallySimpleNote : CommercialNotesModelData) {
+        self.changingReallySimpleNote = changingReallySimpleNote
     }
     
     private func addItem() -> Void {
@@ -51,6 +74,38 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
             sender: self)
     }
     
+    private func changeItem() -> Void {
+        // get changed note instance
+        if let changingReallySimpleNote = self.changingReallySimpleNote {
+            // change the note through note storage
+            CommercialNotesStorage.storage.changeNote(
+                noteToBeChanged: CommercialNotesModelData(
+                    noteId:        changingReallySimpleNote.noteId,
+                    noteTitle:     noteTitleTextField.text!,
+                    noteText:      noteTextView.text,
+                    noteTimeStamp: noteCreationTimeStamp)
+            )
+            // navigate back to list of notes
+            performSegue(
+                withIdentifier: "backToMasterView",
+                sender: self)
+        } else {
+            // create alert
+            let alert = UIAlertController(
+                title: "Unexpected error",
+                message: "Cannot change the note, unexpected error occurred. Try again later.",
+                preferredStyle: .alert)
+            
+            // add OK action
+            alert.addAction(UIAlertAction(title: "OK",
+                                          style: .default ) { (_) in self.performSegue(
+                                withIdentifier: "backToMasterView",
+                                sender: self)})
+            // show alert
+            self.present(alert, animated: true)
+        }
+    }
+    
     /*
      // MARK: - Navigation
      
@@ -63,11 +118,16 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
     
     //Handle the text changes here
     func textViewDidChange(_ textView: UITextView) {
-        // create mode
-        if ( noteTitleTextField.text?.isEmpty ?? true ) || ( textView.text?.isEmpty ?? true ) {
-            noteDoneButton.isEnabled = false
-        } else {
+        if self.changingReallySimpleNote != nil {
+            // change mode
             noteDoneButton.isEnabled = true
+        } else {
+            // create mode
+            if ( noteTitleTextField.text?.isEmpty ?? true ) || ( textView.text?.isEmpty ?? true ) {
+                noteDoneButton.isEnabled = false
+            } else {
+                noteDoneButton.isEnabled = true
+            }
         }
     }
 }
