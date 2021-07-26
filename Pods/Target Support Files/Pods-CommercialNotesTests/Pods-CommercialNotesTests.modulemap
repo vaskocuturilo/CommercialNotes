@@ -1,0 +1,6 @@
+framework module Pods_CommercialNotesTests {
+  umbrella header "Pods-CommercialNotesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
