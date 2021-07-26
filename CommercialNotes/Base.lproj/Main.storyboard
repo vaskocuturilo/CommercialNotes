@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivv-lD-GWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="77"/>
+            <point key="canvasLocation" x="-464" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oky-92-zQX">
@@ -83,7 +83,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4U-1J-yWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912" y="77"/>
+            <point key="canvasLocation" x="-1191" y="64"/>
         </scene>
         <!--Commercial Note Create Change View Controller-->
         <scene sceneID="4k6-yz-hOM">
@@ -170,7 +170,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL1-s0-Jyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Bo-9C-7Wh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="263"/>
+            <point key="canvasLocation" x="1491" y="-89"/>
         </scene>
         <!--Detail-->
         <scene sceneID="qxS-eu-S63">
@@ -239,7 +239,7 @@
             <objects>
                 <viewController title="Detail" id="wBq-4v-gNu" customClass="DetailViewController" customModule="CommercialNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gV-Bx-s2M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4R-uh-ENp">
@@ -248,8 +248,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Note Text" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-99-JFe" userLabel="Note Text View">
-                                <rect key="frame" x="16" y="88" width="382" height="578"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Note Text" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-99-JFe" userLabel="Note Text View">
+                                <rect key="frame" x="16" y="89" width="382" height="578"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -261,9 +261,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDh-s1-t8w">
-                                <rect key="frame" x="20" y="674" width="374" height="42"/>
+                                <rect key="frame" x="20" y="654" width="374" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="✎ Edit"/>
+                                <connections>
+                                    <segue destination="on8-hh-YT1" kind="show" identifier="showChangeNoteSegue" id="2fh-da-SXf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mix-A0-CTG"/>
@@ -288,13 +291,15 @@
                     <navigationItem key="navigationItem" title="Note Details" id="9SQ-J6-iUL"/>
                     <connections>
                         <outlet property="noteDate" destination="Mtn-rF-Qdp" id="88H-ST-l8m"/>
+                        <outlet property="noteDateLabel" destination="Mtn-rF-Qdp" id="Ebs-Nh-Pfu"/>
                         <outlet property="noteTextTextView" destination="GBJ-99-JFe" id="myc-oC-Lqx"/>
-                        <outlet property="noteTitleLabel" destination="m4R-uh-ENp" id="UnM-N3-zs7"/>
+                        <outlet property="noteTextView" destination="GBJ-99-JFe" id="ZQT-D5-VoG"/>
+                        <outlet property="noteTitleLabel" destination="m4R-uh-ENp" id="fBV-Az-fXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZM-EN-mcR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="-429"/>
+            <point key="canvasLocation" x="1462" y="-778"/>
         </scene>
         <!--Master-->
         <scene sceneID="OfQ-eG-8Bd">
@@ -348,22 +353,25 @@
                                     <outlet property="noteDateLabel" destination="DDC-mb-k6w" id="QxW-b3-moA"/>
                                     <outlet property="noteTextLabel" destination="nWq-p2-26h" id="WpQ-B8-8gq"/>
                                     <outlet property="noteTitleLabel" destination="uV0-Ap-R9y" id="b5g-og-jD7"/>
-                                    <segue destination="on8-hh-YT1" kind="show" identifier="showCreateNoteSegue" id="POa-Wf-uZY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="XHd-3a-5b8"/>
+                    <connections>
+                        <segue destination="wBq-4v-gNu" kind="show" identifier="showDetail" id="Skz-dx-EmF"/>
+                        <segue destination="on8-hh-YT1" kind="show" identifier="showCreateNoteSegue" id="6yd-qH-XWR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcS-1a-gQy" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="77"/>
+            <point key="canvasLocation" x="407" y="-311"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="POa-Wf-uZY"/>
         <segue reference="Uk9-kD-NKI"/>
+        <segue reference="6yd-qH-XWR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">

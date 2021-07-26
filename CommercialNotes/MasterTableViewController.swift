@@ -12,7 +12,7 @@ class MasterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // Core data initialization
+        // Core data initialization
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             // create alert
             let alert = UIAlertController(
@@ -41,9 +41,26 @@ class MasterTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @objc
     func insertNewObject(_ sender: Any) {
         performSegue(withIdentifier: "showCreateNoteSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                //let object = objects[indexPath.row]
+                let object = CommercialNotesStorage.storage.readNote(at: indexPath.row)
+                let controller = segue.destination as! DetailViewController
+                controller.detailItem = object
+                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -60,37 +77,38 @@ class MasterTableViewController: UITableViewController {
     }
     
     
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommercialNoteUITableViewCell
-    
-            if let object = CommercialNotesStorage.storage.readNote(at: indexPath.row) {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommercialNoteUITableViewCell
+        
+        if let object = CommercialNotesStorage.storage.readNote(at: indexPath.row) {
             cell.noteTitleLabel!.text = object.noteTitle
             cell.noteTextLabel!.text = object.noteText
-                cell.noteDateLabel!.text = CommercialNotesDateHelper.convertDate(date: Date.init(seconds: object.noteTimeStamp))
-            }
-    
-            return cell
+            cell.noteDateLabel!.text = CommercialNotesDateHelper.convertDate(date: Date.init(seconds: object.noteTimeStamp))
         }
+        
+        return cell
+    }
     
     
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //objects.remove(at: indexPath.row)
+            CommercialNotesStorage.storage.removeNote(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
     
     /*
      // Override to support rearranging the table view.
