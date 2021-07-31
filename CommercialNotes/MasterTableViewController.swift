@@ -7,23 +7,21 @@
 
 import UIKit
 
-class MasterTableViewController: UITableViewController {
+class MasterTableViewController: UITableViewController{
+    
+    var detailViewController: DetailViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Core data initialization
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            // create alert
             let alert = UIAlertController(
                 title: "Could note get app delegate",
                 message: "Could note get app delegate, unexpected error occurred. Try again later.",
                 preferredStyle: .alert)
             
-            // add OK action
             alert.addAction(UIAlertAction(title: "OK",
                                           style: .default))
-            // show alert
             self.present(alert, animated: true)
             
             return
@@ -33,7 +31,6 @@ class MasterTableViewController: UITableViewController {
         
         CommercialNotesStorage.storage.setManagedContext(managedObjectContext: managedContext)
         
-        // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
@@ -42,6 +39,7 @@ class MasterTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // clearsSelectionOnViewWillAppear = (detailViewController != nil)
         super.viewWillAppear(animated)
     }
     
@@ -57,8 +55,6 @@ class MasterTableViewController: UITableViewController {
                 let object = CommercialNotesStorage.storage.readNote(at: indexPath.row)
                 let controller = segue.destination as! DetailViewController
                 controller.detailItem = object
-                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -89,50 +85,23 @@ class MasterTableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showDetail", sender: self)
+        
+    }
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
-    
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //objects.remove(at: indexPath.row)
             CommercialNotesStorage.storage.removeNote(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-    
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

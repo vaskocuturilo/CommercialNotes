@@ -16,7 +16,6 @@ class CommercialNotesCoreDataHelper {
         noteToBeCreated:          CommercialNotesModelData,
         intoManagedObjectContext: NSManagedObjectContext) {
         
-        // Let’s create an entity and new note record
         let noteEntity = NSEntityDescription.entity(
             forEntityName: "Note",
             in:            intoManagedObjectContext)!
@@ -24,7 +23,7 @@ class CommercialNotesCoreDataHelper {
         let newNoteToBeCreated = NSManagedObject(
             entity:     noteEntity,
             insertInto: intoManagedObjectContext)
-
+        
         newNoteToBeCreated.setValue(
             noteToBeCreated.noteId,
             forKey: "noteId")
@@ -54,7 +53,6 @@ class CommercialNotesCoreDataHelper {
         noteToBeChanged:        CommercialNotesModelData,
         inManagedObjectContext: NSManagedObjectContext) {
         
-        // read managed object
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
         let noteIdPredicate = NSPredicate(format: "noteId = %@", noteToBeChanged.noteId as CVarArg)
@@ -69,18 +67,18 @@ class CommercialNotesCoreDataHelper {
             noteManagedObjectToBeChanged.setValue(
                 noteToBeChanged.noteTitle,
                 forKey: "noteTitle")
-
+            
             noteManagedObjectToBeChanged.setValue(
                 noteToBeChanged.noteText,
                 forKey: "noteText")
-
+            
             noteManagedObjectToBeChanged.setValue(
                 noteToBeChanged.noteTimeStamp,
                 forKey: "noteTimeStamp")
-
+            
             // save
             try inManagedObjectContext.save()
-
+            
         } catch let error as NSError {
             // TODO error handling
             print("Could not change. \(error), \(error.userInfo)")
@@ -114,11 +112,10 @@ class CommercialNotesCoreDataHelper {
             // TODO error handling
             print("Could not delete. \(error), \(error.userInfo)")
         }
-        
     }
     
     static func readNotesFromCoreData(fromManagedObjectContext: NSManagedObjectContext) -> [CommercialNotesModelData] {
-
+        
         var returnedNotes = [CommercialNotesModelData]()
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
@@ -129,10 +126,10 @@ class CommercialNotesCoreDataHelper {
             fetchedNotesFromCoreData.forEach { (fetchRequestResult) in
                 let noteManagedObjectRead = fetchRequestResult as! NSManagedObject
                 returnedNotes.append(CommercialNotesModelData.init(
-                    noteId:        noteManagedObjectRead.value(forKey: "noteId")        as! UUID,
-                    noteTitle:     noteManagedObjectRead.value(forKey: "noteTitle")     as! String,
-                    noteText:      noteManagedObjectRead.value(forKey: "noteText")      as! String,
-                    noteTimeStamp: noteManagedObjectRead.value(forKey: "noteTimeStamp") as! Int64))
+                                        noteId:        noteManagedObjectRead.value(forKey: "noteId")        as! UUID,
+                                        noteTitle:     noteManagedObjectRead.value(forKey: "noteTitle")     as! String,
+                                        noteText:      noteManagedObjectRead.value(forKey: "noteText")      as! String,
+                                        noteTimeStamp: noteManagedObjectRead.value(forKey: "noteTimeStamp") as! Int64))
             }
         } catch let error as NSError {
             // TODO error handling
@@ -148,13 +145,13 @@ class CommercialNotesCoreDataHelper {
     static func readNoteFromCoreData(
         noteIdToBeRead:           UUID,
         fromManagedObjectContext: NSManagedObjectContext) -> CommercialNotesModelData? {
-
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-
+        
         let noteIdPredicate = NSPredicate(format: "noteId = %@", noteIdToBeRead as CVarArg)
-
+        
         fetchRequest.predicate = noteIdPredicate
-
+        
         do {
             let fetchedNotesFromCoreData = try fromManagedObjectContext.fetch(fetchRequest)
             let noteManagedObjectToBeRead = fetchedNotesFromCoreData[0] as! NSManagedObject
