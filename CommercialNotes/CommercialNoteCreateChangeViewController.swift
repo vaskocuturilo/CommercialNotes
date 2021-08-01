@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDelegate {
+class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var noteTitleTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var noteDateLabel: UILabel!
@@ -35,9 +35,17 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
         noteTextView.layer.borderWidth = 1.0
         noteTextView.layer.cornerRadius = 5
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+//        let backButton = UIBarButtonItem()
+//        backButton.title = "Back"
+//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+//        self.navigationController?.navigationBar.topItem?.
+//        
+        let backBTN = UIBarButtonItem(image: UIImage(named: "Image-2"),
+                                      style: .plain,
+                                      target: navigationController,
+                                      action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem = backBTN
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @IBAction func tapAddButton(_ sender: Any) {
