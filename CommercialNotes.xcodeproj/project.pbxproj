@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27E11A6BBD4A0D7309DD3ED3 /* Pods_CommercialNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060F05AE3B317AF44139D7AE /* Pods_CommercialNotesTests.framework */; };
 		6FE389C665D47AFB3CF4E71A /* Pods_CommercialNotes_CommercialNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197D21C1BAAB0C23BE7F7534 /* Pods_CommercialNotes_CommercialNotesUITests.framework */; };
+		722BD2E126B690B2001C5FBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD2E026B690B2001C5FBF /* MainViewController.swift */; };
+		722BD2F126B693AB001C5FBF /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD2F026B693AB001C5FBF /* ButtonStyle.swift */; };
 		728C2FFF26AF31A8009DD5E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */; };
 		72CA0C3E26ADFFC300D55013 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */; };
 		72CA0C4326AE01B100D55013 /* CommercialNoteUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */; };
@@ -51,6 +53,8 @@
 		1A15B45A45CD1908D2672EB2 /* Pods-CommercialNotes-CommercialNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommercialNotes-CommercialNotesUITests.release.xcconfig"; path = "Target Support Files/Pods-CommercialNotes-CommercialNotesUITests/Pods-CommercialNotes-CommercialNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1EBFF567C1F8585E5EF952FF /* Pods-CommercialNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommercialNotesTests.debug.xcconfig"; path = "Target Support Files/Pods-CommercialNotesTests/Pods-CommercialNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		49BFE709BCFB0DDE8DE0F6E4 /* Pods_CommercialNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommercialNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722BD2E026B690B2001C5FBF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		722BD2F026B693AB001C5FBF /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommercialNoteUITableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		722BD2EF26B69391001C5FBF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				722BD2F026B693AB001C5FBF /* ButtonStyle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		72CA0C8726AE154C00D55013 /* CoreModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 		72FE4AC526AC1E5C008D34A1 /* CommercialNotes */ = {
 			isa = PBXGroup;
 			children = (
+				722BD2EF26B69391001C5FBF /* Helpers */,
 				72CA0C8726AE154C00D55013 /* CoreModel */,
 				72CA0C4C26AE060400D55013 /* CommercialNotesDateHelper.swift */,
 				72CA0C5B26AE083700D55013 /* CommercialNotesCoreDataHelper.swift */,
@@ -155,6 +168,7 @@
 				72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */,
 				72CA0C4726AE040000D55013 /* CommercialNoteCreateChangeViewController.swift */,
 				728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */,
+				722BD2E026B690B2001C5FBF /* MainViewController.swift */,
 			);
 			path = CommercialNotes;
 			sourceTree = "<group>";
@@ -456,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722BD2F126B693AB001C5FBF /* ButtonStyle.swift in Sources */,
 				728C2FFF26AF31A8009DD5E0 /* DetailViewController.swift in Sources */,
 				72CA0C5226AE06E400D55013 /* CommercialNotesModelData.swift in Sources */,
 				72CA0C5726AE075300D55013 /* CommercialNotesStorage.swift in Sources */,
@@ -463,6 +478,7 @@
 				72CA0C3E26ADFFC300D55013 /* MasterTableViewController.swift in Sources */,
 				72CA0C8026AE13EB00D55013 /* CommercialNotesData.xcdatamodeld in Sources */,
 				72FE4AC726AC1E5C008D34A1 /* AppDelegate.swift in Sources */,
+				722BD2E126B690B2001C5FBF /* MainViewController.swift in Sources */,
 				72CA0C5C26AE083700D55013 /* CommercialNotesCoreDataHelper.swift in Sources */,
 				72CA0C4826AE040000D55013 /* CommercialNoteCreateChangeViewController.swift in Sources */,
 				72FE4AC926AC1E5C008D34A1 /* SceneDelegate.swift in Sources */,
