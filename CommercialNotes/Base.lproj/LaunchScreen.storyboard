@@ -16,18 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1529119651565-dc15bd8c75fd" translatesAutoresizingMaskIntoConstraints="NO" id="JEX-5a-Ntv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-Mo-6Qb">
+                                <rect key="frame" x="7" y="298" width="400" height="300"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="JEX-5a-Ntv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4sb-E3-KZQ"/>
-                            <constraint firstItem="JEX-5a-Ntv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="C9z-Kv-YhN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JEX-5a-Ntv" secondAttribute="trailing" id="CiH-Ej-qC5"/>
-                            <constraint firstItem="JEX-5a-Ntv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lQS-6G-lYZ"/>
-                            <constraint firstItem="JEX-5a-Ntv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sYy-Qs-YPW"/>
+                            <constraint firstItem="AdT-Mo-6Qb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Hn-PN-QeM"/>
+                            <constraint firstItem="AdT-Mo-6Qb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gSK-Fc-gYU"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,9 +34,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo-1529119651565-dc15bd8c75fd" width="1050" height="700"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="Image" width="400" height="300"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
