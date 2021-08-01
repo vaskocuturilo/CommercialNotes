@@ -13,6 +13,7 @@
 		722BD2F126B693AB001C5FBF /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD2F026B693AB001C5FBF /* ButtonStyle.swift */; };
 		722BD2FF26B6979B001C5FBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD2FE26B6979B001C5FBF /* LoginViewController.swift */; };
 		722BD30426B6A190001C5FBF /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD30326B6A190001C5FBF /* TextFieldStyle.swift */; };
+		722BD30F26B6AF15001C5FBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD30E26B6AF15001C5FBF /* SignUpViewController.swift */; };
 		728C2FFF26AF31A8009DD5E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */; };
 		72CA0C3E26ADFFC300D55013 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */; };
 		72CA0C4326AE01B100D55013 /* CommercialNoteUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		722BD2F026B693AB001C5FBF /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		722BD2FE26B6979B001C5FBF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		722BD30326B6A190001C5FBF /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		722BD30E26B6AF15001C5FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommercialNoteUITableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */,
 				722BD2E026B690B2001C5FBF /* MainViewController.swift */,
 				722BD2FE26B6979B001C5FBF /* LoginViewController.swift */,
+				722BD30E26B6AF15001C5FBF /* SignUpViewController.swift */,
 			);
 			path = CommercialNotes;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				72CA0C3E26ADFFC300D55013 /* MasterTableViewController.swift in Sources */,
 				72CA0C8026AE13EB00D55013 /* CommercialNotesData.xcdatamodeld in Sources */,
 				72FE4AC726AC1E5C008D34A1 /* AppDelegate.swift in Sources */,
+				722BD30F26B6AF15001C5FBF /* SignUpViewController.swift in Sources */,
 				722BD2E126B690B2001C5FBF /* MainViewController.swift in Sources */,
 				72CA0C5C26AE083700D55013 /* CommercialNotesCoreDataHelper.swift in Sources */,
 				72CA0C4826AE040000D55013 /* CommercialNoteCreateChangeViewController.swift in Sources */,
