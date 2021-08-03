@@ -78,6 +78,7 @@ chmod +x xcresults
 
 ![](https://c.radikal.ru/c23/2108/4e/1d4077c05f7d.png)
 ![](https://a.radikal.ru/a39/2108/5d/ddd89be1dc00.jpg)
+![](https://c.radikal.ru/c42/2108/d7/2fce98c1e3f4.jpg)
 
 
 
