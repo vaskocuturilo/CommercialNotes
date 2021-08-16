@@ -34,12 +34,9 @@ class CommercialNoteCreateChangeViewController: UIViewController, UITextViewDele
         noteTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         noteTextView.layer.borderWidth = 1.0
         noteTextView.layer.cornerRadius = 5
+        noteTextView.isAccessibilityElement = true
+        noteTextView.accessibilityIdentifier = "noteTextView"
         
-//        let backButton = UIBarButtonItem()
-//        backButton.title = "Back"
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-//        self.navigationController?.navigationBar.topItem?.
-//        
         let backBTN = UIBarButtonItem(image: UIImage(named: "Image-2"),
                                       style: .plain,
                                       target: navigationController,

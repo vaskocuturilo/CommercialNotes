@@ -17,7 +17,7 @@ class MasterTableViewController: UITableViewController{
         
         button.backgroundColor = .systemBlue
         button.tintColor = .white
-        button.setImage(UIImage(systemName: "square.and.pencil",
+        button.setImage(UIImage(systemName: "pencil.and.outline",
                                 withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium)),for: .normal)
         button.layer.cornerRadius = 40
         button.layer.shadowColor = UIColor.label.cgColor
