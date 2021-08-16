@@ -14,6 +14,12 @@
 		722BD2FF26B6979B001C5FBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD2FE26B6979B001C5FBF /* LoginViewController.swift */; };
 		722BD30426B6A190001C5FBF /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD30326B6A190001C5FBF /* TextFieldStyle.swift */; };
 		722BD30F26B6AF15001C5FBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BD30E26B6AF15001C5FBF /* SignUpViewController.swift */; };
+		727CA0D626CAD13600E7916B /* SimpleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA0D526CAD13600E7916B /* SimpleTest.swift */; };
+		727CA0E926CAD1E100E7916B /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA0DE26CAD1B200E7916B /* BaseTestCase.swift */; };
+		727CA0F526CAD24600E7916B /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA0ED26CAD22700E7916B /* Page.swift */; };
+		727CA0FA26CAD25D00E7916B /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA0F926CAD25D00E7916B /* MainPage.swift */; };
+		727CA10226CAD36B00E7916B /* NotesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA10126CAD36B00E7916B /* NotesPage.swift */; };
+		727CA10726CAD85000E7916B /* CreateNotePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CA10626CAD85000E7916B /* CreateNotePage.swift */; };
 		728C2FFF26AF31A8009DD5E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */; };
 		72CA0C3E26ADFFC300D55013 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */; };
 		72CA0C4326AE01B100D55013 /* CommercialNoteUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */; };
@@ -61,6 +67,12 @@
 		722BD2FE26B6979B001C5FBF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		722BD30326B6A190001C5FBF /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 		722BD30E26B6AF15001C5FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		727CA0D526CAD13600E7916B /* SimpleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTest.swift; sourceTree = "<group>"; };
+		727CA0DE26CAD1B200E7916B /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		727CA0ED26CAD22700E7916B /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		727CA0F926CAD25D00E7916B /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		727CA10126CAD36B00E7916B /* NotesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPage.swift; sourceTree = "<group>"; };
+		727CA10626CAD85000E7916B /* CreateNotePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotePage.swift; sourceTree = "<group>"; };
 		728C2FFE26AF31A8009DD5E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		72CA0C3D26ADFFC300D55013 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		72CA0C4226AE01B100D55013 /* CommercialNoteUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommercialNoteUITableViewCell.swift; sourceTree = "<group>"; };
@@ -126,6 +138,26 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		727CA0D426CAD12500E7916B /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				727CA0D526CAD13600E7916B /* SimpleTest.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		727CA0DD26CAD19200E7916B /* PageObject */ = {
+			isa = PBXGroup;
+			children = (
+				727CA0DE26CAD1B200E7916B /* BaseTestCase.swift */,
+				727CA0ED26CAD22700E7916B /* Page.swift */,
+				727CA0F926CAD25D00E7916B /* MainPage.swift */,
+				727CA10126CAD36B00E7916B /* NotesPage.swift */,
+				727CA10626CAD85000E7916B /* CreateNotePage.swift */,
+			);
+			path = PageObject;
+			sourceTree = "<group>";
+		};
 		72CA0C8726AE154C00D55013 /* CoreModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +191,7 @@
 		72FE4AC526AC1E5C008D34A1 /* CommercialNotes */ = {
 			isa = PBXGroup;
 			children = (
+				727CA0DD26CAD19200E7916B /* PageObject */,
 				722BD2EF26B69391001C5FBF /* Helpers */,
 				72CA0C8726AE154C00D55013 /* CoreModel */,
 				72CA0C4C26AE060400D55013 /* CommercialNotesDateHelper.swift */,
@@ -194,6 +227,7 @@
 		72FE4AEA26AC1E5D008D34A1 /* CommercialNotesUITests */ = {
 			isa = PBXGroup;
 			children = (
+				727CA0D426CAD12500E7916B /* TestCases */,
 				72FE4AEB26AC1E5D008D34A1 /* CommercialNotesUITests.swift */,
 				72FE4AED26AC1E5D008D34A1 /* Info.plist */,
 			);
@@ -510,7 +544,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727CA10226CAD36B00E7916B /* NotesPage.swift in Sources */,
+				727CA0FA26CAD25D00E7916B /* MainPage.swift in Sources */,
 				72FE4AEC26AC1E5D008D34A1 /* CommercialNotesUITests.swift in Sources */,
+				727CA0E926CAD1E100E7916B /* BaseTestCase.swift in Sources */,
+				727CA0F526CAD24600E7916B /* Page.swift in Sources */,
+				727CA0D626CAD13600E7916B /* SimpleTest.swift in Sources */,
+				727CA10726CAD85000E7916B /* CreateNotePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +721,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "site.test-engineer.CommercialNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -701,7 +741,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "site.test-engineer.CommercialNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

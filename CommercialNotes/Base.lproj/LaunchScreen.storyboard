@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,19 +11,23 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-Mo-6Qb">
-                                <rect key="frame" x="7" y="298" width="400" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2021-08-13_13.14.22-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="Ov5-hU-YUm">
+                                <rect key="frame" x="7" y="148" width="400" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="LnH-HS-iiX"/>
+                                    <constraint firstAttribute="width" constant="400" id="rFM-ut-vUh"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" red="0.78793841600000003" green="0.74961596730000002" blue="0.70696508879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AdT-Mo-6Qb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Hn-PN-QeM"/>
-                            <constraint firstItem="AdT-Mo-6Qb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gSK-Fc-gYU"/>
+                            <constraint firstItem="Ov5-hU-YUm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LxG-2G-mIg"/>
+                            <constraint firstItem="Ov5-hU-YUm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dyP-8o-T3j"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,9 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="400" height="300"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="2021-08-13_13.14.22-removebg-preview" width="433" height="577"/>
     </resources>
 </document>
