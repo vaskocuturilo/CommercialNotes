@@ -11,7 +11,7 @@ This is simple notes application. The features this application:
 ![](https://b.radikal.ru/b33/2108/e3/08e382bbe990.jpg)
 
 ## Test scenario:
-- Create simple application for sav notes.
+- Create simple application for save notes.
 - Create functional for save notes in core data.
 - Create functional for work with REST API backend and save notes in database from application.
 - Creat functional for work with FireBase and save notes in database Firebase.
